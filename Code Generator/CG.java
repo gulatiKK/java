@@ -8,6 +8,8 @@ public class CG
         String fname;
         String rettype;
         int numOfArguments;
+        int a = 1;
+        int b = 1;
 
         Scanner scan = new Scanner(System.in);
         System.out.print("What is the function name?");
@@ -19,10 +21,12 @@ public class CG
         arguments  = new String[numOfArguments * 2];
         for(int i = 0; i<numOfArguments*2; i+=2)
         {
-            System.out.print("What is the argument name?");
+            System.out.print("What is the name of argument " + a + "?");
             arguments[i+1] = scan.next();
-            System.out.print("What is the argument return type?");
+            System.out.print("What is the argument " + b + " return type?");
             arguments[i] = scan.next();
+            a++;
+            b++;
         }
         
         CodeGenerator cgen = new CodeGenerator(fname, rettype, arguments);
